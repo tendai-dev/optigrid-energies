@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — OptiGrid Energy</title>
+  <meta name="description" content="Learn about OptiGrid Energy — Zimbabwe's trusted solar panel contractor. Our story, mission, and commitment to sustainable energy.">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #F5F5F3; color: #0F232A; overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 16px 40px; display: flex; align-items: center;
+      justify-content: space-between; transition: all 0.4s ease; }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__brand">OPTIGRID</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="is-active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="contact.html" class="nav__cta">Contact Us</a>
+    </div>
+    <button class="nav__mobile" id="menuBtn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-overlay__inner">
+      <button class="mobile-overlay__close" id="menuClose" aria-label="Close menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <ul class="mobile-overlay__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="is-active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="mobile-overlay__cta">Contact Us</a>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       SECTION 1: PAGE HERO
+  ============================================================ -->
+  <section class="page-hero">
+    <img class="page-hero__bg" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80" alt="Solar farm" loading="eager">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content container">
+      <span class="page-hero__label reveal">About OptiGrid Energy</span>
+      <h1 class="page-hero__title reveal">Powering Zimbabwe's <br>Sustainable Future</h1>
+      <p class="page-hero__text reveal">We are Zimbabwe's leading solar energy company, committed to delivering clean, reliable, and affordable power solutions for homes, businesses, and communities.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 2: COMPANY STORY
+  ============================================================ -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="story__grid">
+        <div class="story__image reveal">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80" alt="OptiGrid Energy team working on solar installation" loading="lazy">
+        </div>
+        <div class="story__content reveal">
+          <span class="story__label">Our Story</span>
+          <h2 class="story__title">Built on a Passion for <span class="text-muted">Clean Energy</span></h2>
+          <p class="story__text">OptiGrid Energy was founded in 2018 in Harare, Zimbabwe, by a team of engineers and energy enthusiasts who saw a better way to power the nation. Frustrated by unreliable electricity and rising costs, we set out to make solar energy accessible to every Zimbabwean household and business.</p>
+          <p class="story__text">What started as a small operation installing rooftop panels for neighbours quickly grew into one of Zimbabwe's most trusted solar contractors. Today, we have completed over 1,000 installations across the country — from residential homes in Harare's suburbs to large commercial facilities in Bulawayo, Mutare, and beyond.</p>
+          <p class="story__text">Our growth has been driven by a simple philosophy: deliver exceptional quality, transparent pricing, and unwavering after-sales support. Every system we install is designed to last decades, giving our clients true energy independence and peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 3: MISSION & VISION
+  ============================================================ -->
+  <section class="mission-vision" id="missionVision">
+    <div class="container">
+      <div class="mission-vision__grid">
+        <div class="mission-vision__card reveal">
+          <span class="mission-vision__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </span>
+          <h3 class="mission-vision__title">Our Mission</h3>
+          <p class="mission-vision__text">To accelerate Zimbabwe's transition to clean energy by providing world-class solar solutions that are accessible, affordable, and reliable.</p>
+        </div>
+        <div class="mission-vision__card reveal">
+          <span class="mission-vision__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <h3 class="mission-vision__title">Our Vision</h3>
+          <p class="mission-vision__text">A Zimbabwe where every home, business, and community is powered by clean, sustainable solar energy — reducing dependence on the grid and fostering energy independence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 4: STATS
+  ============================================================ -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item reveal-stagger">
+          <span class="stats__number" data-target="1050">0</span>
+          <span class="stats__suffix">+</span>
+          <p class="stats__label">Installations</p>
+        </div>
+        <div class="stats__item reveal-stagger">
+          <span class="stats__number" data-target="390">0</span>
+          <span class="stats__suffix">MW+</span>
+          <p class="stats__label">Generated</p>
+        </div>
+        <div class="stats__item reveal-stagger">
+          <span class="stats__number" data-target="40">0</span>
+          <span class="stats__suffix">%</span>
+          <p class="stats__label">Average Savings</p>
+        </div>
+        <div class="stats__item reveal-stagger">
+          <span class="stats__number" data-target="98">0</span>
+          <span class="stats__suffix">%</span>
+          <p class="stats__label">Client Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 5: TIMELINE
+  ============================================================ -->
+  <section class="timeline" id="timeline">
+    <div class="container">
+      <div class="timeline__header reveal">
+        <span class="timeline__label">Our Journey</span>
+        <h2 class="timeline__heading">The OptiGrid <span class="text-muted">Story So Far</span></h2>
+      </div>
+
+      <div class="timeline__list">
+        <div class="timeline__item reveal">
+          <span class="timeline__year">2018</span>
+          <h3 class="timeline__title">Founded</h3>
+          <p class="timeline__text">OptiGrid Energy was founded in Harare with a vision to bring solar energy to every Zimbabwean.</p>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__year">2019</span>
+          <h3 class="timeline__title">First 100 Installations</h3>
+          <p class="timeline__text">Reached our first milestone of 100 residential installations across Harare and Bulawayo.</p>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__year">2020</span>
+          <h3 class="timeline__title">Commercial Expansion</h3>
+          <p class="timeline__text">Expanded into commercial solar installations for factories, warehouses, and office buildings.</p>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__year">2021</span>
+          <h3 class="timeline__title">Pay-As-You-Go Launch</h3>
+          <p class="timeline__text">Launched our PAYG programme, making solar accessible to thousands more families.</p>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__year">2023</span>
+          <h3 class="timeline__title">1000+ Installations</h3>
+          <p class="timeline__text">Surpassed 1,000 solar installations across Zimbabwe.</p>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__year">2024</span>
+          <h3 class="timeline__title">Regional Growth</h3>
+          <p class="timeline__text">Expanded operations to cover every major city in Zimbabwe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 6: BRAND PARTNERS MARQUEE
+  ============================================================ -->
+  <section class="partners" id="partners">
+    <div class="container">
+      <span class="partners__label reveal">Trusted By</span>
+    </div>
+    <div class="partners__marquee">
+      <div class="partners__track">
+        <!-- First set -->
+        <div class="partners__item"><span>Victron</span></div>
+        <div class="partners__item"><span>BYD</span></div>
+        <div class="partners__item"><span>Pylontech</span></div>
+        <div class="partners__item"><span>Jinko</span></div>
+        <div class="partners__item"><span>JA Solar</span></div>
+        <div class="partners__item"><span>Solis</span></div>
+        <div class="partners__item"><span>Fronius</span></div>
+        <div class="partners__item"><span>DEYE</span></div>
+        <div class="partners__item"><span>Delta</span></div>
+        <div class="partners__item"><span>Megarevo</span></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="partners__item"><span>Victron</span></div>
+        <div class="partners__item"><span>BYD</span></div>
+        <div class="partners__item"><span>Pylontech</span></div>
+        <div class="partners__item"><span>Jinko</span></div>
+        <div class="partners__item"><span>JA Solar</span></div>
+        <div class="partners__item"><span>Solis</span></div>
+        <div class="partners__item"><span>Fronius</span></div>
+        <div class="partners__item"><span>DEYE</span></div>
+        <div class="partners__item"><span>Delta</span></div>
+        <div class="partners__item"><span>Megarevo</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 7: GALLERY
+  ============================================================ -->
+  <section class="gallery-preview" id="galleryPreview">
+    <div class="container">
+      <div class="gallery-preview__header reveal">
+        <span class="gallery-preview__label">Our Work</span>
+        <h2 class="gallery-preview__title">Solar Installation <span class="text-muted">Gallery</span></h2>
+        <p class="gallery-preview__text">A snapshot of our recent solar projects across Zimbabwe.</p>
+      </div>
+
+      <div class="gallery-preview__grid">
+        <a href="products.html" class="gallery-preview__item reveal-stagger">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=80" alt="Solar panel installation on rooftop" loading="lazy">
+          <div class="gallery-preview__overlay">
+            <span>View Projects</span>
+          </div>
+        </a>
+        <a href="products.html" class="gallery-preview__item reveal-stagger">
+          <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=600&q=80" alt="Commercial solar array" loading="lazy">
+          <div class="gallery-preview__overlay">
+            <span>View Projects</span>
+          </div>
+        </a>
+        <a href="products.html" class="gallery-preview__item reveal-stagger">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Solar farm at sunset" loading="lazy">
+          <div class="gallery-preview__overlay">
+            <span>View Projects</span>
+          </div>
+        </a>
+        <a href="products.html" class="gallery-preview__item reveal-stagger">
+          <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=600&q=80" alt="Residential solar installation" loading="lazy">
+          <div class="gallery-preview__overlay">
+            <span>View Projects</span>
+          </div>
+        </a>
+        <a href="products.html" class="gallery-preview__item reveal-stagger">
+          <img src="https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?w=600&q=80" alt="Solar panels on commercial building" loading="lazy">
+          <div class="gallery-preview__overlay">
+            <span>View Projects</span>
+          </div>
+        </a>
+        <a href="products.html" class="gallery-preview__item reveal-stagger">
+          <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=600&q=80" alt="Ground-mounted solar array" loading="lazy">
+          <div class="gallery-preview__overlay">
+            <span>View Projects</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 8: FINAL CTA
+  ============================================================ -->
+  <section class="final-cta" id="finalCta">
+    <div class="container">
+      <div class="final-cta__inner reveal">
+        <span class="final-cta__watermark">SOLAR PANEL</span>
+        <div class="final-cta__content">
+          <h2 class="final-cta__title">Experience the future<br>of Solar power?</h2>
+          <p class="final-cta__text">Let OptiGrid Energy design and install a solar system that powers your life and protects your future. Get your free quote today.</p>
+          <a href="contact.html" class="btn btn--white">
+            Get A Free Solar Bid
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="final-cta__image">
+          <img src="https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?w=300&q=80" alt="Solar panels" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">OPTIGRID</a>
+          <p class="footer__tagline">Zimbabwe's leading solar energy contractor. Powering a sustainable future for homes, businesses, and communities across the nation.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h4 class="footer__column-title">Quick Links</h4>
+            <ul class="footer__column-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Information</h4>
+            <ul class="footer__column-list">
+              <li><a href="services.html#payg">Pay-As-You-Go</a></li>
+              <li><a href="services.html">Solar EPC</a></li>
+              <li><a href="products.html">Solar Panels</a></li>
+              <li><a href="products.html">Inverters</a></li>
+              <li><a href="products.html">Batteries</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Discover</h4>
+            <ul class="footer__column-list">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Our Team</a></li>
+              <li><a href="products.html">Gallery</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Who We Serve</h4>
+            <ul class="footer__column-list">
+              <li><a href="services.html">Homeowners</a></li>
+              <li><a href="services.html">Businesses</a></li>
+              <li><a href="services.html">Municipalities</a></li>
+              <li><a href="services.html">NGOs</a></li>
+              <li><a href="services.html">Farms &amp; Estates</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__info">
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon - Fri: 8:00 AM - 5:00 PM</span>
+          </div>
+        </div>
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:info@optigridenergy.co.zw">info@optigridenergy.co.zw</a>
+          </div>
+        </div>
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+263782345678">+263 78 234 5678</a>
+            <a href="tel:+263719876543">+263 71 987 6543</a>
+          </div>
+        </div>
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <strong>Location</strong>
+            <span>14 Samora Machel Ave, Harare, Zimbabwe</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 OptiGrid Energy. All rights reserved.</p>
+        <span class="footer__watermark">SOLAR PANEL</span>
+        <a href="#nav" class="footer__back-to-top" aria-label="Back to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>

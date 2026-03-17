@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — OptiGrid Energy</title>
+  <meta name="description" content="Explore OptiGrid Energy's solar services — residential, commercial, industrial, EPC, maintenance, and our affordable Pay-As-You-Go programme.">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif; background: #F5F5F3; color: #0F232A; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s ease; }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__brand">OPTIGRID</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="is-active">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="contact.html" class="nav__cta">Contact Us</a>
+    </div>
+    <button class="nav__mobile" id="menuBtn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-overlay__inner">
+      <button class="mobile-overlay__close" id="menuClose" aria-label="Close menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <ul class="mobile-overlay__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="is-active">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="mobile-overlay__cta">Contact Us</a>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       SECTION 1: PAGE HERO
+  ============================================================ -->
+  <section class="page-hero">
+    <img class="page-hero__bg" src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=1600&q=80" alt="Solar installation" loading="eager">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content container">
+      <span class="page-hero__label reveal">Our Services</span>
+      <h1 class="page-hero__title reveal">Comprehensive Solar <br>Energy Solutions</h1>
+      <p class="page-hero__text reveal">From residential rooftops to large-scale commercial installations, OptiGrid delivers end-to-end solar solutions tailored to your energy needs.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 2: SERVICES OVERVIEW (6 CARDS)
+  ============================================================ -->
+  <section class="services-full" id="servicesOverview">
+    <div class="container">
+      <div class="services-full__grid reveal-stagger">
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Residential solar panels on a home" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Residential Solar</h3>
+            <p class="service-card__text">Custom home solar systems with battery storage for uninterrupted power and lower electricity bills.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=600&q=80" alt="Commercial solar installation on a building" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Commercial Solar</h3>
+            <p class="service-card__text">Large-scale solar installations for businesses, warehouses, and office buildings to reduce operational costs.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=600&q=80" alt="Industrial solar power system" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Industrial Solar</h3>
+            <p class="service-card__text">High-capacity solar systems for factories and industrial facilities. Engineered for maximum output.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img src="https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?w=600&q=80" alt="Solar-powered agricultural irrigation" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Agricultural Solar</h3>
+            <p class="service-card__text">Solar-powered water pumping and irrigation systems for farms and estates across Zimbabwe.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80" alt="Solar EPC engineering team" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Solar EPC</h3>
+            <p class="service-card__text">Full Engineering, Procurement, and Construction services from feasibility to commissioning.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=80" alt="Solar panel maintenance and support" loading="lazy">
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Maintenance &amp; Support</h3>
+            <p class="service-card__text">Ongoing maintenance, monitoring, and support to keep your solar system performing at its best.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 3: PAY-AS-YOU-GO (EXPANDED)
+  ============================================================ -->
+  <section class="payg" id="payg">
+    <div class="container">
+      <div class="payg__inner">
+        <div class="payg__header reveal">
+          <span class="payg__label">Flexible Financing</span>
+          <h2 class="payg__title">Pay-As-You-Go Solar — Own Your Power, One Payment At A Time</h2>
+          <p class="payg__text">No large upfront costs. Our Pay-As-You-Go programme makes solar energy accessible to every Zimbabwean household and business. Start saving from day one.</p>
+        </div>
+
+        <div class="payg__steps">
+          <div class="payg__step reveal-stagger">
+            <div class="payg__step-number">1</div>
+            <div class="payg__step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="payg__step-title">Apply</h3>
+            <p class="payg__step-text">Complete a simple application. Our team assesses your energy needs and designs a system tailored to your property.</p>
+          </div>
+
+          <div class="payg__step-divider reveal">
+            <svg width="40" height="24" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="12" x2="34" y2="12"/><polyline points="28 6 34 12 28 18"/></svg>
+          </div>
+
+          <div class="payg__step reveal-stagger">
+            <div class="payg__step-number">2</div>
+            <div class="payg__step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="payg__step-title">Install</h3>
+            <p class="payg__step-text">Our certified engineers install your solar system quickly and professionally, usually within 2-5 business days.</p>
+          </div>
+
+          <div class="payg__step-divider reveal">
+            <svg width="40" height="24" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="0" y1="12" x2="34" y2="12"/><polyline points="28 6 34 12 28 18"/></svg>
+          </div>
+
+          <div class="payg__step reveal-stagger">
+            <div class="payg__step-number">3</div>
+            <div class="payg__step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3 class="payg__step-title">Pay Monthly</h3>
+            <p class="payg__step-text">Make affordable monthly payments while enjoying clean energy. At the end of your term, the system is yours to own outright.</p>
+          </div>
+        </div>
+
+        <div class="payg__benefits reveal">
+          <ul class="payg__benefits-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Zero upfront deposit required
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Immediate savings on electricity bills
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Full ownership after payment completion
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Maintenance and support included
+            </li>
+          </ul>
+        </div>
+
+        <div class="payg__action reveal">
+          <a href="contact.html" class="btn btn--primary">
+            Get Started with PAYG
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 4: PAYG PRICING PLANS
+  ============================================================ -->
+  <section class="payg-plans" id="paygPlans">
+    <div class="container">
+      <div class="payg-plans__header reveal" style="text-align:center;margin-bottom:40px;">
+        <span style="display:inline-block;font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--paragraph);font-weight:600;margin-bottom:12px;">Pricing Plans</span>
+        <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:900;color:var(--black);">Choose Your <span class="text-muted">PAYG Plan</span></h2>
+      </div>
+
+      <div class="payg-plans__grid">
+
+        <!-- Starter Plan -->
+        <div class="payg-plan reveal-stagger">
+          <div class="payg-plan__name">Starter</div>
+          <div class="payg-plan__price">
+            <span style="font-size:clamp(36px,4vw,52px);font-weight:900;line-height:1;">$45</span>
+            <span style="font-size:14px;color:var(--paragraph);font-weight:500;">/mo</span>
+          </div>
+          <p class="payg-plan__description">Perfect for small households</p>
+          <ul class="payg-plan__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              4 Solar Panels (450W each)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              1 &times; 3.5kWh Battery
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              1 &times; 3kW Inverter
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Basic Monitoring
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12-Month Term
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Installation
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn--primary">Get Started</a>
+        </div>
+
+        <!-- Home Plan (Featured) -->
+        <div class="payg-plan is-featured reveal-stagger">
+          <div class="payg-plan__badge">Most Popular</div>
+          <div class="payg-plan__name">Home</div>
+          <div class="payg-plan__price">
+            <span style="font-size:clamp(36px,4vw,52px);font-weight:900;line-height:1;">$89</span>
+            <span style="font-size:14px;color:var(--paragraph);font-weight:500;">/mo</span>
+          </div>
+          <p class="payg-plan__description">Ideal for medium to large homes</p>
+          <ul class="payg-plan__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              8 Solar Panels (450W each)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              2 &times; 5kWh Batteries
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              1 &times; 5kW Hybrid Inverter
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Smart Monitoring App
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              18-Month Term
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Installation
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority Support
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn--primary">Get Started</a>
+        </div>
+
+        <!-- Business Plan -->
+        <div class="payg-plan reveal-stagger">
+          <div class="payg-plan__name">Business</div>
+          <div class="payg-plan__price">
+            <span style="font-size:clamp(36px,4vw,52px);font-weight:900;line-height:1;">$199</span>
+            <span style="font-size:14px;color:var(--paragraph);font-weight:500;">/mo</span>
+          </div>
+          <p class="payg-plan__description">For commercial properties</p>
+          <ul class="payg-plan__features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              20 Solar Panels (550W each)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              4 &times; 5kWh Batteries
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              1 &times; 10kW Inverter
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Enterprise Monitoring
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              24-Month Term
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Free Installation
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Dedicated Account Manager
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn--primary">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 5: OUR PROCESS
+  ============================================================ -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process__header reveal" style="text-align:center;margin-bottom:40px;">
+        <span style="display:inline-block;font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--paragraph);font-weight:600;margin-bottom:12px;">How We Work</span>
+        <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:900;color:var(--black);">Our Proven <span class="text-muted">Process</span></h2>
+      </div>
+
+      <div class="stats__grid">
+        <div class="services-preview__card reveal-stagger" style="text-decoration:none;cursor:default;">
+          <div class="services-preview__card-number">01</div>
+          <h3 class="services-preview__card-title">Design</h3>
+          <p class="services-preview__card-text">We assess your energy needs and design a custom solar system optimised for your property, budget, and consumption patterns.</p>
+        </div>
+
+        <div class="services-preview__card reveal-stagger" style="text-decoration:none;cursor:default;">
+          <div class="services-preview__card-number">02</div>
+          <h3 class="services-preview__card-title">Install</h3>
+          <p class="services-preview__card-text">Our certified engineers handle all procurement and installation with precision, ensuring your system is set up safely and efficiently.</p>
+        </div>
+
+        <div class="services-preview__card reveal-stagger" style="text-decoration:none;cursor:default;">
+          <div class="services-preview__card-number">03</div>
+          <h3 class="services-preview__card-title">Configure</h3>
+          <p class="services-preview__card-text">We configure your inverter, batteries, and monitoring system for optimal performance, then commission and test everything thoroughly.</p>
+        </div>
+
+        <div class="services-preview__card reveal-stagger" style="text-decoration:none;cursor:default;">
+          <div class="services-preview__card-number">04</div>
+          <h3 class="services-preview__card-title">Maintain</h3>
+          <p class="services-preview__card-text">Ongoing monitoring, preventive maintenance, and responsive support ensure your solar investment delivers peak performance for years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 6: FAQ
+  ============================================================ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq__header reveal" style="text-align:center;margin-bottom:40px;">
+        <span style="display:inline-block;font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--paragraph);font-weight:600;margin-bottom:12px;">Got Questions?</span>
+        <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:900;color:var(--black);">Frequently Asked <span class="text-muted">Questions</span></h2>
+      </div>
+
+      <div class="faq__list">
+
+        <div class="faq-item reveal-stagger">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What is Pay-As-You-Go solar?</span>
+            <div class="faq-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-item__answer">
+            <p>Our PAYG programme allows you to get a full solar system installed with zero upfront costs. You make affordable monthly payments and at the end of your term, the system is yours to own.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-stagger">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>How long does installation take?</span>
+            <div class="faq-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-item__answer">
+            <p>Most residential installations are completed within 2-5 business days. Commercial installations may take 1-3 weeks depending on the system size and complexity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-stagger">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What happens if the system needs repairs?</span>
+            <div class="faq-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-item__answer">
+            <p>All PAYG systems come with comprehensive maintenance and support included in your monthly payment. Our team of certified engineers will handle any repairs at no additional cost.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-stagger">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>Can I upgrade my PAYG plan?</span>
+            <div class="faq-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes! You can upgrade to a higher plan at any time. We'll adjust your monthly payment and install any additional equipment needed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-stagger">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>Do you offer off-grid solutions?</span>
+            <div class="faq-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-item__answer">
+            <p>Absolutely. We design and install both grid-tied and off-grid solar systems. Our off-grid solutions are ideal for remote farms, lodges, and areas without reliable grid access.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-stagger">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What areas do you serve?</span>
+            <div class="faq-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+          </button>
+          <div class="faq-item__answer">
+            <p>We serve all major cities and towns across Zimbabwe, including Harare, Bulawayo, Mutare, Gweru, Masvingo, Chinhoyi, and surrounding areas.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 7: FINAL CTA
+  ============================================================ -->
+  <section class="final-cta" id="finalCta">
+    <div class="container">
+      <div class="final-cta__inner reveal">
+        <span class="final-cta__watermark">SOLAR PANEL</span>
+        <div class="final-cta__content">
+          <h2 class="final-cta__title">Experience the future<br>of Solar power?</h2>
+          <p class="final-cta__text">Let OptiGrid Energy design and install a solar system that powers your life and protects your future. Get your free quote today.</p>
+          <a href="contact.html" class="btn btn--white">
+            Get A Free Solar Bid
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="final-cta__image">
+          <img src="https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?w=300&q=80" alt="Solar panels" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">OPTIGRID</a>
+          <p class="footer__tagline">Zimbabwe's leading solar energy contractor. Powering a sustainable future for homes, businesses, and communities across the nation.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h4 class="footer__column-title">Quick Links</h4>
+            <ul class="footer__column-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Information</h4>
+            <ul class="footer__column-list">
+              <li><a href="services.html#payg">Pay-As-You-Go</a></li>
+              <li><a href="services.html">Solar EPC</a></li>
+              <li><a href="products.html">Solar Panels</a></li>
+              <li><a href="products.html">Inverters</a></li>
+              <li><a href="products.html">Batteries</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Discover</h4>
+            <ul class="footer__column-list">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Our Team</a></li>
+              <li><a href="products.html">Gallery</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__column-title">Who We Serve</h4>
+            <ul class="footer__column-list">
+              <li><a href="services.html">Homeowners</a></li>
+              <li><a href="services.html">Businesses</a></li>
+              <li><a href="services.html">Municipalities</a></li>
+              <li><a href="services.html">NGOs</a></li>
+              <li><a href="services.html">Farms &amp; Estates</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__info">
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon - Fri: 8:00 AM - 5:00 PM</span>
+          </div>
+        </div>
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:info@optigridenergy.co.zw">info@optigridenergy.co.zw</a>
+          </div>
+        </div>
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+263782345678">+263 78 234 5678</a>
+            <a href="tel:+263719876543">+263 71 987 6543</a>
+          </div>
+        </div>
+        <div class="footer__info-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <strong>Location</strong>
+            <span>14 Samora Machel Ave, Harare, Zimbabwe</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 OptiGrid Energy. All rights reserved.</p>
+        <span class="footer__watermark">SOLAR PANEL</span>
+        <a href="#nav" class="footer__back-to-top" aria-label="Back to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>
