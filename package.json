@@ -1,0 +1,17 @@
+{
+  "name": "optigrid-energies",
+  "version": "1.0.0",
+  "description": "OptiGrid Energy — Zimbabwe's Trusted Solar Panel Contractor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "migrate": "node server/db/migrate.js",
+    "sync:victron": "node server/victron/sync-cli.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "express": "^4.21.0",
+    "xml2js": "^0.6.2"
+  }
+}

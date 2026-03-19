@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — OptiGrid Energy</title>
+  <meta name="description" content="Victron Energy product details — datasheets, manuals, system schematics, and technical resources.">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif; background: #F5F5F3; color: #0F232A; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s ease; }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__brand">OPTIGRID</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="victron-catalog.html" class="is-active">Victron Catalog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="contact.html" class="nav__cta">Contact Us</a>
+    </div>
+    <button class="nav__mobile" id="menuBtn" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-overlay__inner">
+      <button class="mobile-overlay__close" id="menuClose" aria-label="Close menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <ul class="mobile-overlay__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="victron-catalog.html" class="is-active">Victron Catalog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="mobile-overlay__cta">Contact Us</a>
+    </div>
+  </div>
+
+
+  <!-- BREADCRUMB -->
+  <section class="vp-breadcrumb">
+    <div class="container">
+      <a href="victron-catalog.html">Victron Catalog</a>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <span id="vpBreadcrumbName">Loading...</span>
+    </div>
+  </section>
+
+
+  <!-- PRODUCT DETAIL -->
+  <section class="vp-detail">
+    <div class="container">
+
+      <!-- Loading skeleton -->
+      <div class="vp-detail__grid" id="vpSkeleton">
+        <div class="vp-detail__image-col">
+          <div class="skeleton-box" style="height:360px;border-radius:16px"></div>
+        </div>
+        <div class="vp-detail__info-col">
+          <div class="skeleton-box" style="height:14px;width:30%"></div>
+          <div class="skeleton-box" style="height:32px;width:70%;margin-top:12px"></div>
+          <div class="skeleton-box" style="height:14px;width:50%;margin-top:16px"></div>
+          <div class="skeleton-box" style="height:80px;width:100%;margin-top:20px"></div>
+          <div class="skeleton-box" style="height:44px;width:50%;margin-top:24px;border-radius:100px"></div>
+        </div>
+      </div>
+
+      <!-- Actual content (populated by JS) -->
+      <div class="vp-detail__grid" id="vpContent" style="display:none">
+        <div class="vp-detail__image-col">
+          <div class="vp-detail__image-wrap">
+            <img id="vpImage" src="" alt="" loading="eager">
+          </div>
+        </div>
+        <div class="vp-detail__info-col">
+          <span class="vp-detail__category" id="vpCategory"></span>
+          <h1 class="vp-detail__title" id="vpTitle"></h1>
+          <p class="vp-detail__model" id="vpModel"></p>
+          <p class="vp-detail__description" id="vpDescription"></p>
+          <div class="vp-detail__actions">
+            <a id="vpOfficialLink" href="#" target="_blank" rel="noopener" class="btn btn--primary">
+              View on Victron
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn--primary" style="background:transparent;color:var(--black);border:1px solid var(--stock)">
+              Request Quote
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error state -->
+      <div class="vc-error" id="vpError" style="display:none">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <h3>Product not found</h3>
+        <p>This product may have been removed or the URL is incorrect.</p>
+        <a href="victron-catalog.html" class="btn btn--primary">Back to Catalog</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- DOCUMENTS & ASSETS -->
+  <section class="vp-assets" id="vpAssetsSection" style="display:none">
+    <div class="container">
+      <h2 class="vp-assets__heading">Documents & Resources</h2>
+      <div class="vp-assets__groups" id="vpAssetsGroups"></div>
+    </div>
+  </section>
+
+
+  <!-- RELATED PRODUCTS -->
+  <section class="vp-related" id="vpRelatedSection" style="display:none">
+    <div class="container">
+      <h2 class="vp-related__heading">Related Products</h2>
+      <div class="vc-grid vc-grid--small" id="vpRelatedGrid"></div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">OPTIGRID</a>
+          <p class="footer__tagline">Zimbabwe's leading solar energy contractor. Powering a sustainable future for homes, businesses, and communities across the nation.</p>
+        </div>
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h4 class="footer__column-title">Quick Links</h4>
+            <ul class="footer__column-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="victron-catalog.html">Victron Catalog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__column-title">Contact</h4>
+            <ul class="footer__column-list">
+              <li><a href="mailto:info@optigridenergy.co.zw">info@optigridenergy.co.zw</a></li>
+              <li><a href="tel:+263782345678">+263 78 234 5678</a></li>
+              <li>14 Samora Machel Ave, Harare</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">2026 OptiGrid Energy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="public/js/victron-product.js"></script>
+</body>
+</html>
