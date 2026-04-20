@@ -77,6 +77,10 @@
     { "src": "/services", "dest": "/services.html" },
     { "src": "/victron-catalog", "dest": "/victron-catalog.html" },
     { "src": "/victron-product", "dest": "/victron-product.html" },
+    { "src": "/privacy", "dest": "/privacy.html" },
+    { "src": "/privacy.html", "dest": "/privacy.html" },
+    { "src": "/terms", "dest": "/terms.html" },
+    { "src": "/terms.html", "dest": "/terms.html" },
     { "src": "/$", "dest": "/index.html" }
   ]
 }

@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service — OptiGrid Energy</title>
+    <meta
+      name="description"
+      content="Terms of Service for optigridenergy.co.zw — governing law Zimbabwe, intellectual property, disclaimers, and limitation of liability."
+    />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          "Satoshi",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: #f5f5f3;
+        color: #0f232a;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 16px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.4s ease;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="nav">
+      <a href="index.html" class="nav__brand">OPTIGRID</a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="victron-catalog.html">Victron Catalog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg
+            class="moon-icon"
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          <svg
+            class="sun-icon"
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+        <a href="contact.html" class="nav__cta">Contact Us</a>
+      </div>
+      <button class="nav__mobile" id="menuBtn" aria-label="Menu">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <line x1="3" y1="7" x2="21" y2="7" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="17" x2="21" y2="17" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- ========== MOBILE OVERLAY ========== -->
+    <div class="mobile-overlay" id="mobileOverlay">
+      <div class="mobile-overlay__inner">
+        <button
+          class="mobile-overlay__close"
+          id="menuClose"
+          aria-label="Close menu"
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <ul class="mobile-overlay__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="victron-catalog.html">Victron Catalog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="mobile-overlay__cta">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- ========== LEGAL CONTENT ========== -->
+    <main>
+      <div class="legal-page">
+        <h1>Terms of Service</h1>
+        <p class="legal-page__meta">Last updated: 20 April 2026</p>
+
+        <p>
+          Please read these Terms of Service carefully before using the OptiGrid
+          Energy website at
+          <a href="https://optigridenergy.co.zw">optigridenergy.co.zw</a> (the
+          "Site"), operated by OptiGrid Energy (Pvt) Ltd ("OptiGrid", "we",
+          "us", or "our"). By accessing or using the Site, you agree to be bound
+          by these Terms. If you do not agree, please do not use the Site.
+        </p>
+
+        <h2>1. Nature of the Site — Informational Use Only</h2>
+        <p>
+          The Site is provided for general informational purposes. All content,
+          including descriptions of products, services, pricing indications, and
+          technical specifications, is intended to give prospective clients an
+          overview of what OptiGrid offers. Nothing on the Site constitutes a
+          binding contract, formal offer, or guarantee of availability, pricing,
+          or delivery timescales.
+        </p>
+        <p>
+          Any quotation or proposal issued by OptiGrid following a contact form
+          submission or consultation is a commercial estimate only. It is not
+          binding on either party until a formal written agreement has been
+          signed by authorised representatives of both parties.
+        </p>
+
+        <h2>2. Intellectual Property</h2>
+        <p>
+          All content on the Site — including but not limited to text, graphics,
+          logos, icons, images, page layouts, and software — is the property of
+          OptiGrid Energy (Pvt) Ltd or its content licensors and is protected
+          under the laws of Zimbabwe, including the
+          <strong>Copyright and Neighbouring Rights Act [Chapter 26:05]</strong
+          >.
+        </p>
+        <p>
+          You may access, view, and print content from the Site for your own
+          personal, non-commercial use. You may not reproduce, republish,
+          distribute, transmit, modify, create derivative works from, or
+          otherwise exploit any content from the Site without our prior written
+          consent.
+        </p>
+        <p>
+          The "OPTIGRID" name, logo, and related marks are trademarks of
+          OptiGrid Energy (Pvt) Ltd. Unauthorised use of our trademarks is
+          prohibited.
+        </p>
+
+        <h2>3. Product and Technical Information Disclaimer</h2>
+        <p>
+          The Site includes product listings, technical specifications, and
+          pricing information sourced from manufacturer catalogues, including
+          data from the
+          <strong>Victron Energy</strong> product catalogue. This information is
+          provided in good faith and is updated periodically, but:
+        </p>
+        <ul>
+          <li>
+            Product specifications are subject to change by the manufacturer
+            without notice.
+          </li>
+          <li>
+            Availability of specific products in Zimbabwe may vary depending on
+            import conditions and stock levels.
+          </li>
+          <li>
+            Prices displayed, if any, are indicative only and are exclusive of
+            installation, VAT, import duties, and any other applicable taxes or
+            levies.
+          </li>
+          <li>
+            OptiGrid makes no warranty as to the accuracy, completeness, or
+            currency of third-party manufacturer data displayed on the Site.
+          </li>
+        </ul>
+        <p>
+          Always request a formal written quotation from our team before making
+          any purchasing decisions.
+        </p>
+
+        <h2>4. Pay-As-You-Go (PAYG) Solar Programme</h2>
+        <p>
+          Information on the Site regarding OptiGrid's Pay-As-You-Go (PAYG)
+          solar programme is for general awareness only. The PAYG programme
+          involves specific eligibility criteria, credit assessments, service
+          agreements, payment schedules, and terms that vary by client and
+          location.
+        </p>
+        <p>
+          No binding PAYG offer is made through this website. Participation in
+          the PAYG programme requires a
+          <strong>separate, signed written agreement</strong> between the client
+          and OptiGrid, which will set out all terms and conditions including
+          ownership, maintenance responsibilities, default consequences, and
+          buyout options. Contact us to find out if you qualify.
+        </p>
+
+        <h2>5. Accuracy of Information and No Reliance</h2>
+        <p>
+          While we strive to keep the information on the Site accurate and
+          up-to-date, we make no representations or warranties of any kind,
+          express or implied, about the completeness, accuracy, reliability, or
+          suitability of the information, products, or services described. Any
+          reliance you place on such information is strictly at your own risk.
+        </p>
+        <p>
+          Energy generation estimates, savings projections, and system sizing
+          information provided on the Site are based on general assumptions and
+          typical conditions. Actual results will vary based on your specific
+          location, energy usage patterns, property characteristics, and other
+          factors. A site assessment by our engineers is required before any
+          figures can be considered reliable.
+        </p>
+
+        <h2>6. Third-Party Links</h2>
+        <p>
+          The Site may contain links to third-party websites, including
+          manufacturer sites and financing partners. These links are provided
+          for your convenience only. OptiGrid has no control over the content of
+          third-party sites and accepts no responsibility for them or for any
+          loss or damage that may arise from your use of them.
+        </p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>
+          To the fullest extent permitted by Zimbabwean law, OptiGrid Energy
+          (Pvt) Ltd, its directors, employees, and agents shall not be liable
+          for any direct, indirect, incidental, consequential, or punitive
+          damages arising from:
+        </p>
+        <ul>
+          <li>Your use of, or inability to use, the Site</li>
+          <li>
+            Any reliance placed on information, estimates, or content on the
+            Site
+          </li>
+          <li>
+            Unauthorised access to or alteration of your data or transmissions
+          </li>
+          <li>
+            Any interruption, suspension, or termination of the Site or any
+            service described therein
+          </li>
+        </ul>
+        <p>
+          This limitation applies whether the claim is based in contract, tort,
+          statute, or any other legal theory, and even if OptiGrid has been
+          advised of the possibility of such damages.
+        </p>
+
+        <h2>8. Governing Law</h2>
+        <p>
+          These Terms of Service and any dispute arising from your use of the
+          Site shall be governed by and construed in accordance with the laws of
+          <strong>Zimbabwe</strong>, without regard to its conflict of law
+          principles. You agree to submit to the exclusive jurisdiction of the
+          courts of Zimbabwe for resolution of any disputes arising in
+          connection with these Terms or the Site.
+        </p>
+
+        <h2>9. Dispute Resolution</h2>
+        <p>
+          We encourage you to contact us first if you have any concerns or
+          complaints. Most issues can be resolved quickly and informally. You
+          may reach us at
+          <a href="mailto:info@optigridenergy.co.zw"
+            >info@optigridenergy.co.zw</a
+          >
+          or on +263 78 234 5678.
+        </p>
+        <p>
+          If a dispute cannot be resolved informally, it shall be referred to
+          the courts of Zimbabwe, sitting in Harare, which shall have exclusive
+          jurisdiction.
+        </p>
+
+        <h2>10. Changes to These Terms</h2>
+        <p>
+          We reserve the right to modify these Terms of Service at any time. We
+          will indicate the date of the most recent revision at the top of this
+          page. Your continued use of the Site after any changes are posted
+          constitutes your acceptance of the revised Terms. We encourage you to
+          review these Terms periodically.
+        </p>
+
+        <h2>11. Severability</h2>
+        <p>
+          If any provision of these Terms is found to be unlawful, void, or
+          unenforceable by a court of competent jurisdiction, that provision
+          shall be deemed severed from the remaining Terms, which shall continue
+          in full force and effect.
+        </p>
+
+        <h2>12. Contact Us</h2>
+        <p>
+          If you have any questions about these Terms of Service, please contact
+          us:
+        </p>
+        <ul>
+          <li>
+            <strong>Email:</strong>
+            <a href="mailto:info@optigridenergy.co.zw"
+              >info@optigridenergy.co.zw</a
+            >
+          </li>
+          <li><strong>Phone:</strong> +263 78 234 5678</li>
+          <li>
+            <strong>Post:</strong> OptiGrid Energy (Pvt) Ltd, 14 Samora Machel
+            Avenue, Harare, Zimbabwe
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">OPTIGRID</a>
+            <p class="footer__tagline">
+              Powering Zimbabwe's future with clean, affordable solar energy
+              solutions for homes, businesses, and communities.
+            </p>
+          </div>
+
+          <div class="footer__columns">
+            <div class="footer__column">
+              <h4 class="footer__column-title">Quick Links</h4>
+              <ul class="footer__column-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h4 class="footer__column-title">Information</h4>
+              <ul class="footer__column-list">
+                <li><a href="services.html#payg">Pay-As-You-Go</a></li>
+                <li><a href="services.html">Solar EPC</a></li>
+                <li><a href="products.html">Solar Panels</a></li>
+                <li><a href="products.html">Inverters</a></li>
+                <li><a href="products.html">Batteries</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h4 class="footer__column-title">Discover</h4>
+              <ul class="footer__column-list">
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="about.html">Our Team</a></li>
+                <li><a href="products.html">Gallery</a></li>
+                <li><a href="contact.html">Careers</a></li>
+                <li><a href="contact.html">FAQs</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__column">
+              <h4 class="footer__column-title">Who We Serve</h4>
+              <ul class="footer__column-list">
+                <li><a href="services.html">Homeowners</a></li>
+                <li><a href="services.html">Businesses</a></li>
+                <li><a href="services.html">Municipalities</a></li>
+                <li><a href="services.html">NGOs</a></li>
+                <li><a href="services.html">Farms &amp; Estates</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2026 OptiGrid Energy. All rights reserved.
+          </p>
+          <span class="footer__watermark">SOLAR PANEL</span>
+          <a href="#nav" class="footer__back-to-top" aria-label="Back to top">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="19" x2="12" y2="5" />
+              <polyline points="5 12 12 5 19 12" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a
+      href="https://wa.me/263782345678?text=Hi%20OptiGrid%2C%20I%27d%20like%20to%20learn%20more%20about%20solar%20options."
+      class="wa-fab"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M16 0C7.163 0 0 7.163 0 16c0 2.827.736 5.476 2.027 7.774L0 32l8.456-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.77-1.853l-.485-.289-5.019 1.191 1.26-4.888-.317-.502A13.236 13.236 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.878c-.398-.199-2.356-1.163-2.72-1.295-.365-.133-.63-.199-.895.199-.265.398-1.029 1.295-1.261 1.56-.232.265-.465.299-.863.1-.398-.2-1.682-.62-3.203-1.977-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.812.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.696-.1-.199-.895-2.158-1.227-2.954-.323-.775-.651-.67-.895-.682l-.762-.013c-.265 0-.696.1-1.06.497-.365.398-1.393 1.362-1.393 3.32 0 1.959 1.427 3.85 1.626 4.116.199.265 2.809 4.288 6.806 6.017.951.41 1.693.655 2.271.839.954.303 1.823.26 2.51.158.765-.114 2.356-.963 2.688-1.894.332-.93.332-1.727.232-1.894-.1-.166-.365-.265-.763-.464z"
+        />
+      </svg>
+    </a>
+
+    <!-- Motion layer: Lenis smooth scroll, GSAP + ScrollTrigger, SplitType -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+    <script src="motion.js" defer></script>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+  </body>
+</html>

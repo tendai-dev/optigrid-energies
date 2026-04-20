@@ -14,6 +14,7 @@ const { runMigrations } = require("./server/db/migrate");
 const victronRoutes = require("./server/victron/routes");
 const adminRoutes = require("./server/admin/routes");
 const { createStore } = require("./server/admin/auth");
+const contactRoutes = require("./server/routes/contact");
 
 // ---------------------------------------------------------------------------
 // Sentry (optional — only initialised when SENTRY_DSN is present)
@@ -157,6 +158,7 @@ app.use(
 // ---------------------------------------------------------------------------
 app.use("/api/victron", victronRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/contact", contactRoutes);
 
 // ---------------------------------------------------------------------------
 // 404 handler for unknown /api/* routes
