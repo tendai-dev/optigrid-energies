@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotation — OptiGrid CRM</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <h2>OptiGrid CRM</h2>
+          <span>Solar Project Management</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="/admin/dashboard">Dashboard</a>
+          <a href="/admin/clients">Clients</a>
+          <a href="/admin/quotations">Quotations</a>
+          <a href="/admin/projects">Projects</a>
+          <a href="/admin/receipts">Receipts</a>
+        </nav>
+        <div class="sidebar-footer"><button data-logout>Sign Out</button></div>
+      </aside>
+
+      <main class="admin-main">
+        <div class="admin-topbar">
+          <div>
+            <button class="mobile-menu-btn">Menu</button>
+            <h1 id="pageTitle">New Quotation</h1>
+          </div>
+          <div class="topbar-actions">
+            <a href="/admin/quotations" class="btn btn-secondary"
+              >Back to Quotations</a
+            >
+          </div>
+        </div>
+
+        <form id="quotationForm" class="admin-form" style="max-width: none">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="client_id">Client *</label>
+              <select id="client_id" name="client_id" required>
+                <option value="">Select a client...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="valid_until">Valid Until</label>
+              <input type="date" id="valid_until" name="valid_until" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vat_rate">VAT Rate (%)</label>
+              <input
+                type="number"
+                id="vat_rate"
+                name="vat_rate"
+                value="15"
+                step="0.1"
+                min="0"
+              />
+            </div>
+            <div class="form-group">
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes" rows="2"></textarea>
+            </div>
+          </div>
+
+          <h3 style="margin: 1.5rem 0 0.75rem">Line Items</h3>
+          <table class="line-items-table">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th class="col-qty">Qty</th>
+                <th class="col-unit">Unit</th>
+                <th class="col-price">Unit Price</th>
+                <th class="col-total">Total</th>
+                <th class="col-action"></th>
+              </tr>
+            </thead>
+            <tbody id="lineItems"></tbody>
+          </table>
+          <button
+            type="button"
+            class="btn btn-secondary btn-sm"
+            id="addItemBtn"
+          >
+            + Add Item
+          </button>
+
+          <div class="totals-section">
+            <table class="totals-table">
+              <tr>
+                <td>Subtotal</td>
+                <td id="subtotalDisplay">$0.00</td>
+              </tr>
+              <tr>
+                <td>VAT (<span id="vatRateDisplay">15</span>%)</td>
+                <td id="vatDisplay">$0.00</td>
+              </tr>
+              <tr class="grand-total">
+                <td>Total</td>
+                <td id="totalDisplay">$0.00</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              Save Quotation
+            </button>
+            <a href="/admin/quotations" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-common.js"></script>
+    <script src="/admin/js/quotations.js"></script>
+  </body>
+</html>

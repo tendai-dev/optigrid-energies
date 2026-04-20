@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "admin/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/server.js" },
+    { "src": "/admin/js/(.*)", "dest": "/public/admin/js/$1" },
+    { "src": "/admin/(.*\\.html)", "dest": "/admin/$1" },
+    { "src": "/admin/login", "dest": "/admin/login.html" },
+    { "src": "/admin/dashboard", "dest": "/admin/dashboard.html" },
+    { "src": "/admin/clients", "dest": "/admin/clients.html" },
+    { "src": "/admin/client-form", "dest": "/admin/client-form.html" },
+    { "src": "/admin/client-detail", "dest": "/admin/client-detail.html" },
+    { "src": "/admin/quotations", "dest": "/admin/quotations.html" },
+    { "src": "/admin/quotation-form", "dest": "/admin/quotation-form.html" },
+    {
+      "src": "/admin/quotation-detail",
+      "dest": "/admin/quotation-detail.html"
+    },
+    {
+      "src": "/admin/quotation-document",
+      "dest": "/admin/quotation-document.html"
+    },
+    { "src": "/admin/projects", "dest": "/admin/projects.html" },
+    { "src": "/admin/project-form", "dest": "/admin/project-form.html" },
+    { "src": "/admin/project-detail", "dest": "/admin/project-detail.html" },
+    { "src": "/admin/receipts", "dest": "/admin/receipts.html" },
+    { "src": "/admin/receipt-form", "dest": "/admin/receipt-form.html" },
+    { "src": "/admin/receipt-detail", "dest": "/admin/receipt-detail.html" },
+    {
+      "src": "/admin/receipt-document",
+      "dest": "/admin/receipt-document.html"
+    },
+    { "src": "/admin/?$", "dest": "/admin/login.html" },
+    { "src": "/styles-admin.css", "dest": "/styles-admin.css" },
+    { "src": "/styles.css", "dest": "/styles.css" },
+    { "src": "/main.js", "dest": "/main.js" },
+    { "src": "/motion.js", "dest": "/motion.js" },
+    { "src": "/(.*\\.html)", "dest": "/$1" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/contact", "dest": "/contact.html" },
+    { "src": "/products", "dest": "/products.html" },
+    { "src": "/services", "dest": "/services.html" },
+    { "src": "/victron-catalog", "dest": "/victron-catalog.html" },
+    { "src": "/victron-product", "dest": "/victron-product.html" },
+    { "src": "/$", "dest": "/index.html" }
+  ]
+}

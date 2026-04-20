@@ -1,5 +1,5 @@
-const path = require('path');
-const Database = require('better-sqlite3');
+const path = require("path");
+const Database = require("better-sqlite3");
 
 let db = null;
 
@@ -10,11 +10,11 @@ let db = null;
 function initDb() {
   if (db) return db;
 
-  const dbPath = path.resolve(process.env.DB_PATH || './data/optigrid.db');
+  const dbPath = path.resolve(process.env.DB_PATH || "./data/optigrid.db");
   db = new Database(dbPath);
 
-  db.pragma('journal_mode = WAL');
-  db.pragma('foreign_keys = ON');
+  db.pragma("journal_mode = WAL");
+  db.pragma("foreign_keys = ON");
 
   return db;
 }

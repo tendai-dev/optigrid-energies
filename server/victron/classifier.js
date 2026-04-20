@@ -10,38 +10,38 @@
 
 // Canonical types used internally
 const TYPES = {
-  DATASHEET: 'datasheet',
-  MANUAL: 'manual',
-  BROCHURE: 'brochure',
-  SCHEMATIC: 'schematic',
-  ENCLOSURE: 'enclosure',
-  CERTIFICATE: 'certificate',
-  THREE_D: '3d',
-  PHOTO: 'photo',
-  VIDEO: 'video',
-  TECHNICAL: 'technical',
-  OTHER: 'other',
+  DATASHEET: "datasheet",
+  MANUAL: "manual",
+  BROCHURE: "brochure",
+  SCHEMATIC: "schematic",
+  ENCLOSURE: "enclosure",
+  CERTIFICATE: "certificate",
+  THREE_D: "3d",
+  PHOTO: "photo",
+  VIDEO: "video",
+  TECHNICAL: "technical",
+  OTHER: "other",
 };
 
 // Map Victron document_type strings to canonical types
 const TYPE_MAP = {
-  'datasheet': TYPES.DATASHEET,
-  'material safety datasheet': TYPES.DATASHEET,
-  'product manual': TYPES.MANUAL,
-  'old user manual': TYPES.MANUAL,
-  'quick installation guide': TYPES.MANUAL,
-  'brochure': TYPES.BROCHURE,
-  'system schematic': TYPES.SCHEMATIC,
-  'enclosure dimension': TYPES.ENCLOSURE,
-  'certificate': TYPES.CERTIFICATE,
-  'high quality photo': TYPES.PHOTO,
-  'infographic image': TYPES.PHOTO,
-  'technical information': TYPES.TECHNICAL,
-  'publication': TYPES.TECHNICAL,
-  'press release': TYPES.OTHER,
-  'promo video': TYPES.VIDEO,
-  'video': TYPES.VIDEO,
-  'other': TYPES.OTHER,
+  datasheet: TYPES.DATASHEET,
+  "material safety datasheet": TYPES.DATASHEET,
+  "product manual": TYPES.MANUAL,
+  "old user manual": TYPES.MANUAL,
+  "quick installation guide": TYPES.MANUAL,
+  brochure: TYPES.BROCHURE,
+  "system schematic": TYPES.SCHEMATIC,
+  "enclosure dimension": TYPES.ENCLOSURE,
+  certificate: TYPES.CERTIFICATE,
+  "high quality photo": TYPES.PHOTO,
+  "infographic image": TYPES.PHOTO,
+  "technical information": TYPES.TECHNICAL,
+  publication: TYPES.TECHNICAL,
+  "press release": TYPES.OTHER,
+  "promo video": TYPES.VIDEO,
+  video: TYPES.VIDEO,
+  other: TYPES.OTHER,
 };
 
 // URL / filename pattern fallbacks
@@ -70,7 +70,7 @@ function classifyDocument(docType, url, name) {
   }
 
   // 2. Inspect URL and name for pattern matches
-  const combined = `${url || ''} ${name || ''}`;
+  const combined = `${url || ""} ${name || ""}`;
   for (const { pattern, type } of URL_PATTERNS) {
     if (pattern.test(combined)) return type;
   }

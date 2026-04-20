@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotation Detail — OptiGrid CRM</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <h2>OptiGrid CRM</h2>
+          <span>Solar Project Management</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="/admin/dashboard">Dashboard</a>
+          <a href="/admin/clients">Clients</a>
+          <a href="/admin/quotations">Quotations</a>
+          <a href="/admin/projects">Projects</a>
+          <a href="/admin/receipts">Receipts</a>
+        </nav>
+        <div class="sidebar-footer"><button data-logout>Sign Out</button></div>
+      </aside>
+
+      <main class="admin-main">
+        <div class="admin-topbar">
+          <div>
+            <button class="mobile-menu-btn">Menu</button>
+            <h1 id="pageTitle">Quotation Detail</h1>
+          </div>
+          <div class="topbar-actions" id="actionButtons"></div>
+        </div>
+
+        <div id="quotationDetail">
+          <div class="detail-section">
+            <h3>Quotation Information</h3>
+            <div class="detail-grid" id="quotationInfo"></div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Client</h3>
+            <div class="detail-grid" id="clientInfo"></div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Line Items</h3>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Description</th>
+                  <th>Qty</th>
+                  <th>Unit</th>
+                  <th>Unit Price</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="itemsBody"></tbody>
+            </table>
+            <div class="totals-section">
+              <table class="totals-table" id="totalsTable"></table>
+            </div>
+          </div>
+
+          <div class="detail-section" id="statusSection" style="display: none">
+            <h3>Update Status</h3>
+            <div
+              style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+              id="statusButtons"
+            ></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-common.js"></script>
+    <script src="/admin/js/quotations.js"></script>
+  </body>
+</html>

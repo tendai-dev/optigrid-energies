@@ -28,106 +28,107 @@ Internal admin CRM for OptiGrid Energies at `/admin`, protected by a shared pass
 
 ### clients
 
-| Column | Type | Constraints |
-|--------|------|------------|
-| id | INTEGER | PK, auto-increment |
-| name | TEXT | NOT NULL |
-| email | TEXT | |
-| phone | TEXT | |
-| address | TEXT | |
-| city | TEXT | |
-| type | TEXT | NOT NULL, CHECK IN ('residential', 'commercial') |
-| notes | TEXT | |
-| created_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
-| updated_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
+| Column     | Type    | Constraints                                      |
+| ---------- | ------- | ------------------------------------------------ |
+| id         | INTEGER | PK, auto-increment                               |
+| name       | TEXT    | NOT NULL                                         |
+| email      | TEXT    |                                                  |
+| phone      | TEXT    |                                                  |
+| address    | TEXT    |                                                  |
+| city       | TEXT    |                                                  |
+| type       | TEXT    | NOT NULL, CHECK IN ('residential', 'commercial') |
+| notes      | TEXT    |                                                  |
+| created_at | TEXT    | DEFAULT CURRENT_TIMESTAMP                        |
+| updated_at | TEXT    | DEFAULT CURRENT_TIMESTAMP                        |
 
 ### quotations
 
-| Column | Type | Constraints |
-|--------|------|------------|
-| id | INTEGER | PK, auto-increment |
-| quotation_number | TEXT | UNIQUE, NOT NULL (format: OG-Q-YYYY-NNNN) |
-| client_id | INTEGER | FK -> clients(id), NOT NULL |
-| status | TEXT | NOT NULL, DEFAULT 'draft', CHECK IN ('draft', 'sent', 'accepted', 'rejected') |
-| subtotal | REAL | NOT NULL, DEFAULT 0 |
-| vat_rate | REAL | NOT NULL, DEFAULT 15.0 |
-| vat_amount | REAL | NOT NULL, DEFAULT 0 |
-| total | REAL | NOT NULL, DEFAULT 0 |
-| notes | TEXT | |
-| valid_until | TEXT | |
-| created_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
-| updated_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
+| Column           | Type    | Constraints                                                                   |
+| ---------------- | ------- | ----------------------------------------------------------------------------- |
+| id               | INTEGER | PK, auto-increment                                                            |
+| quotation_number | TEXT    | UNIQUE, NOT NULL (format: OG-Q-YYYY-NNNN)                                     |
+| client_id        | INTEGER | FK -> clients(id), NOT NULL                                                   |
+| status           | TEXT    | NOT NULL, DEFAULT 'draft', CHECK IN ('draft', 'sent', 'accepted', 'rejected') |
+| subtotal         | REAL    | NOT NULL, DEFAULT 0                                                           |
+| vat_rate         | REAL    | NOT NULL, DEFAULT 15.0                                                        |
+| vat_amount       | REAL    | NOT NULL, DEFAULT 0                                                           |
+| total            | REAL    | NOT NULL, DEFAULT 0                                                           |
+| notes            | TEXT    |                                                                               |
+| valid_until      | TEXT    |                                                                               |
+| created_at       | TEXT    | DEFAULT CURRENT_TIMESTAMP                                                     |
+| updated_at       | TEXT    | DEFAULT CURRENT_TIMESTAMP                                                     |
 
 ### quotation_items
 
-| Column | Type | Constraints |
-|--------|------|------------|
-| id | INTEGER | PK, auto-increment |
+| Column       | Type    | Constraints                                    |
+| ------------ | ------- | ---------------------------------------------- |
+| id           | INTEGER | PK, auto-increment                             |
 | quotation_id | INTEGER | FK -> quotations(id), CASCADE DELETE, NOT NULL |
-| description | TEXT | NOT NULL |
-| quantity | REAL | NOT NULL, DEFAULT 1 |
-| unit | TEXT | DEFAULT 'unit' |
-| unit_price | REAL | NOT NULL |
-| total | REAL | NOT NULL |
-| sort_order | INTEGER | DEFAULT 0 |
+| description  | TEXT    | NOT NULL                                       |
+| quantity     | REAL    | NOT NULL, DEFAULT 1                            |
+| unit         | TEXT    | DEFAULT 'unit'                                 |
+| unit_price   | REAL    | NOT NULL                                       |
+| total        | REAL    | NOT NULL                                       |
+| sort_order   | INTEGER | DEFAULT 0                                      |
 
 Index: quotation_id
 
 ### projects
 
-| Column | Type | Constraints |
-|--------|------|------------|
-| id | INTEGER | PK, auto-increment |
-| project_number | TEXT | UNIQUE, NOT NULL (format: OG-P-YYYY-NNNN) |
-| client_id | INTEGER | FK -> clients(id), NOT NULL |
-| quotation_id | INTEGER | FK -> quotations(id), nullable |
-| type | TEXT | NOT NULL, CHECK IN ('residential', 'commercial') |
-| status | TEXT | NOT NULL, DEFAULT 'planning', CHECK IN ('planning', 'procurement', 'installation', 'commissioning', 'completed') |
-| title | TEXT | NOT NULL |
-| site_address | TEXT | |
-| gps_lat | REAL | |
-| gps_lng | REAL | |
-| panel_count | INTEGER | |
-| capacity_kw | REAL | |
-| inverter_details | TEXT | |
-| battery_details | TEXT | |
-| start_date | TEXT | |
-| expected_completion | TEXT | |
-| actual_completion | TEXT | |
-| notes | TEXT | |
-| created_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
-| updated_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
+| Column              | Type    | Constraints                                                                                                      |
+| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
+| id                  | INTEGER | PK, auto-increment                                                                                               |
+| project_number      | TEXT    | UNIQUE, NOT NULL (format: OG-P-YYYY-NNNN)                                                                        |
+| client_id           | INTEGER | FK -> clients(id), NOT NULL                                                                                      |
+| quotation_id        | INTEGER | FK -> quotations(id), nullable                                                                                   |
+| type                | TEXT    | NOT NULL, CHECK IN ('residential', 'commercial')                                                                 |
+| status              | TEXT    | NOT NULL, DEFAULT 'planning', CHECK IN ('planning', 'procurement', 'installation', 'commissioning', 'completed') |
+| title               | TEXT    | NOT NULL                                                                                                         |
+| site_address        | TEXT    |                                                                                                                  |
+| gps_lat             | REAL    |                                                                                                                  |
+| gps_lng             | REAL    |                                                                                                                  |
+| panel_count         | INTEGER |                                                                                                                  |
+| capacity_kw         | REAL    |                                                                                                                  |
+| inverter_details    | TEXT    |                                                                                                                  |
+| battery_details     | TEXT    |                                                                                                                  |
+| start_date          | TEXT    |                                                                                                                  |
+| expected_completion | TEXT    |                                                                                                                  |
+| actual_completion   | TEXT    |                                                                                                                  |
+| notes               | TEXT    |                                                                                                                  |
+| created_at          | TEXT    | DEFAULT CURRENT_TIMESTAMP                                                                                        |
+| updated_at          | TEXT    | DEFAULT CURRENT_TIMESTAMP                                                                                        |
 
 Indexes: client_id, quotation_id, status
 
 ### receipts
 
-| Column | Type | Constraints |
-|--------|------|------------|
-| id | INTEGER | PK, auto-increment |
-| receipt_number | TEXT | UNIQUE, NOT NULL (format: OG-R-YYYY-NNNN) |
-| project_id | INTEGER | FK -> projects(id), NOT NULL |
-| client_id | INTEGER | FK -> clients(id), NOT NULL |
-| amount | REAL | NOT NULL |
-| payment_method | TEXT | NOT NULL, CHECK IN ('cash', 'bank_transfer', 'mobile_money', 'other') |
-| payment_reference | TEXT | |
-| notes | TEXT | |
-| paid_at | TEXT | NOT NULL |
-| created_at | TEXT | DEFAULT CURRENT_TIMESTAMP |
+| Column            | Type    | Constraints                                                           |
+| ----------------- | ------- | --------------------------------------------------------------------- |
+| id                | INTEGER | PK, auto-increment                                                    |
+| receipt_number    | TEXT    | UNIQUE, NOT NULL (format: OG-R-YYYY-NNNN)                             |
+| project_id        | INTEGER | FK -> projects(id), NOT NULL                                          |
+| client_id         | INTEGER | FK -> clients(id), NOT NULL                                           |
+| amount            | REAL    | NOT NULL                                                              |
+| payment_method    | TEXT    | NOT NULL, CHECK IN ('cash', 'bank_transfer', 'mobile_money', 'other') |
+| payment_reference | TEXT    |                                                                       |
+| notes             | TEXT    |                                                                       |
+| paid_at           | TEXT    | NOT NULL                                                              |
+| created_at        | TEXT    | DEFAULT CURRENT_TIMESTAMP                                             |
 
 Index: project_id, client_id
 
 ### sessions (for express-session)
 
-| Column | Type | Constraints |
-|--------|------|------------|
-| sid | TEXT | PK |
-| sess | TEXT | NOT NULL |
-| expired | TEXT | |
+| Column  | Type | Constraints |
+| ------- | ---- | ----------- |
+| sid     | TEXT | PK          |
+| sess    | TEXT | NOT NULL    |
+| expired | TEXT |             |
 
 ## Auto-numbering
 
 Helper function generates sequential numbers per entity per year:
+
 - Query: `SELECT MAX(CAST(SUBSTR(quotation_number, -4) AS INTEGER)) FROM quotations WHERE quotation_number LIKE 'OG-Q-2026-%'`
 - Increment by 1, zero-pad to 4 digits
 - Same pattern for projects (OG-P-) and receipts (OG-R-)
@@ -135,7 +136,9 @@ Helper function generates sequential numbers per entity per year:
 ## Admin Pages
 
 ### Layout
+
 All admin pages share a common structure:
+
 - Sidebar navigation (collapsible on mobile)
 - Top bar with "OptiGrid CRM" title and logout button
 - Main content area
@@ -168,10 +171,12 @@ All admin pages share a common structure:
 All under `/api/admin/*`, protected by session auth middleware.
 
 ### Auth
+
 - `POST /api/admin/login` — Validate password, create session
 - `POST /api/admin/logout` — Destroy session
 
 ### Clients
+
 - `GET /api/admin/clients` — List (search, filter, pagination)
 - `POST /api/admin/clients` — Create
 - `GET /api/admin/clients/:id` — Get with summary counts
@@ -179,6 +184,7 @@ All under `/api/admin/*`, protected by session auth middleware.
 - `DELETE /api/admin/clients/:id` — Delete (only if no linked records)
 
 ### Quotations
+
 - `GET /api/admin/quotations` — List (search, filter by status, pagination)
 - `POST /api/admin/quotations` — Create with items
 - `GET /api/admin/quotations/:id` — Get with items and client
@@ -187,6 +193,7 @@ All under `/api/admin/*`, protected by session auth middleware.
 - `DELETE /api/admin/quotations/:id` — Delete (draft only)
 
 ### Projects
+
 - `GET /api/admin/projects` — List (search, filter by status/type, pagination)
 - `POST /api/admin/projects` — Create
 - `GET /api/admin/projects/:id` — Get with client, quotation, receipts, payment summary
@@ -194,12 +201,14 @@ All under `/api/admin/*`, protected by session auth middleware.
 - `PUT /api/admin/projects/:id/status` — Update status
 
 ### Receipts
+
 - `GET /api/admin/receipts` — List (search, filter by payment method, pagination)
 - `POST /api/admin/receipts` — Create
 - `GET /api/admin/receipts/:id` — Get with project and client
 - `DELETE /api/admin/receipts/:id` — Delete
 
 ### Dashboard
+
 - `GET /api/admin/dashboard` — Aggregated stats (client count, project counts by status, quotation counts by status, total revenue, recent activity)
 
 ## Quotation Document Design

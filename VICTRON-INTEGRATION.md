@@ -37,13 +37,13 @@ npm run dev           # Start with --watch for auto-reload
 
 ## Environment Variables
 
-| Variable | Default | Description |
-|---|---|---|
-| `PORT` | `3000` | Server port |
-| `DB_PATH` | `./data/optigrid.db` | SQLite database file path |
-| `VICTRON_FEED_URL` | `https://www.victronenergy.com/api/v1/products?format=xml` | Product feed URL |
-| `VICTRON_FETCH_TIMEOUT_MS` | `30000` | Feed fetch timeout |
-| `ADMIN_SYNC_KEY` | (empty) | Protects POST /api/victron/sync. If empty, endpoint is open. |
+| Variable                   | Default                                                    | Description                                                  |
+| -------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| `PORT`                     | `3000`                                                     | Server port                                                  |
+| `DB_PATH`                  | `./data/optigrid.db`                                       | SQLite database file path                                    |
+| `VICTRON_FEED_URL`         | `https://www.victronenergy.com/api/v1/products?format=xml` | Product feed URL                                             |
+| `VICTRON_FETCH_TIMEOUT_MS` | `30000`                                                    | Feed fetch timeout                                           |
+| `ADMIN_SYNC_KEY`           | (empty)                                                    | Protects POST /api/victron/sync. If empty, endpoint is open. |
 
 ## How Sync Works
 
@@ -60,11 +60,13 @@ npm run dev           # Start with --watch for auto-reload
 ## How to Trigger Sync
 
 **CLI (recommended for initial load):**
+
 ```bash
 npm run sync:victron
 ```
 
 **API endpoint:**
+
 ```bash
 # Without admin key
 curl -X POST http://localhost:3000/api/victron/sync
@@ -78,29 +80,31 @@ curl -X POST http://localhost:3000/api/victron/sync \
 
 Documents from the Victron feed are classified into canonical types:
 
-| Victron Type | Internal Type | Description |
-|---|---|---|
-| Datasheet | `datasheet` | Product datasheets |
-| Material safety datasheet | `datasheet` | MSDS documents |
-| Product Manual | `manual` | Product manuals |
-| Old user manual | `manual` | Legacy manuals |
-| Quick installation guide | `manual` | Install guides |
-| Brochure | `brochure` | Marketing brochures |
-| System schematic | `schematic` | System schematics and wiring diagrams |
-| Enclosure dimension | `enclosure` | Mechanical drawings, dimensions |
-| Certificate | `certificate` | Compliance certificates |
-| High quality photo | `photo` | Product photography |
-| Technical information | `technical` | Technical articles |
-| Promo video / Video | `video` | Product videos |
+| Victron Type              | Internal Type | Description                           |
+| ------------------------- | ------------- | ------------------------------------- |
+| Datasheet                 | `datasheet`   | Product datasheets                    |
+| Material safety datasheet | `datasheet`   | MSDS documents                        |
+| Product Manual            | `manual`      | Product manuals                       |
+| Old user manual           | `manual`      | Legacy manuals                        |
+| Quick installation guide  | `manual`      | Install guides                        |
+| Brochure                  | `brochure`    | Marketing brochures                   |
+| System schematic          | `schematic`   | System schematics and wiring diagrams |
+| Enclosure dimension       | `enclosure`   | Mechanical drawings, dimensions       |
+| Certificate               | `certificate` | Compliance certificates               |
+| High quality photo        | `photo`       | Product photography                   |
+| Technical information     | `technical`   | Technical articles                    |
+| Promo video / Video       | `video`       | Product videos                        |
 
 **Fallback classification** uses URL/filename pattern matching for documents without a type label.
 
 ## API Endpoints
 
 ### GET /api/victron/products
+
 List products with pagination, search, and filtering.
 
 **Query parameters:**
+
 - `page` (default: 1)
 - `limit` (default: 24, max: 100)
 - `search` — text search across name, description, SKU
@@ -109,6 +113,7 @@ List products with pagination, search, and filtering.
 - `type` — filter to products that have assets of this type (e.g., `schematic`)
 
 **Response:**
+
 ```json
 {
   "data": [
@@ -124,7 +129,13 @@ List products with pagination, search, and filtering.
       "product_url": "https://www.victronenergy.com/products/...",
       "category_name": "Inverter/chargers",
       "category_slug": "inverter-chargers",
-      "asset_types": ["datasheet", "manual", "schematic", "brochure", "certificate"]
+      "asset_types": [
+        "datasheet",
+        "manual",
+        "schematic",
+        "brochure",
+        "certificate"
+      ]
     }
   ],
   "pagination": {
@@ -137,29 +148,36 @@ List products with pagination, search, and filtering.
 ```
 
 ### GET /api/victron/products/:slug
+
 Full product detail with grouped documents and related products.
 
 ### GET /api/victron/products/:slug/assets
+
 Product documents. Optional `?type=datasheet` filter.
 
 ### GET /api/victron/categories
+
 All categories with product counts.
 
 ### POST /api/victron/sync
+
 Trigger a full sync. Returns summary of results.
 
 ## Database Schema
 
 ### victron_categories
+
 - id, name, slug, product_count, created_at, updated_at
 
 ### victron_products
+
 - id, external_id (unique), slug (unique), name, short_name, model, sku
 - category_id (FK), short_description, full_description
 - product_url, image_url, modified_at, raw_payload
 - is_active, created_at, updated_at
 
 ### victron_product_documents
+
 - id, product_id (FK), external_id, type, title, url
 - file_format, language, sort_order, metadata_json
 - created_at, updated_at
@@ -167,20 +185,26 @@ Trigger a full sync. Returns summary of results.
 ## Future Extensions
 
 ### Compatibility Engine
+
 The `raw_payload` field stores the complete Victron feed data for each product, including technical specifications (battery voltage, power ratings, etc.). A compatibility engine could:
+
 - Parse `pms_technical_data` from raw_payload
 - Build a compatibility matrix between inverters, batteries, and charge controllers
 - Suggest compatible products based on voltage/capacity matching
 
 ### System Builder / Mockup Builder
+
 The schematic and wiring diagram assets provide a foundation for an interactive system designer:
+
 - Let users drag-and-drop Victron components
 - Auto-validate compatibility
 - Generate a bill of materials
 - Link to relevant schematics for the selected configuration
 
 ### 3D Viewer Integration
+
 Enclosure dimension files and any future STEP/STL files can be rendered:
+
 - Integrate three.js or model-viewer for in-browser 3D preview
 - Show physical dimensions overlay
 - Allow rotation and measurement

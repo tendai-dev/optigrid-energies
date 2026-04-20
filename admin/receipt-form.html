@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt — OptiGrid CRM</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <h2>OptiGrid CRM</h2>
+          <span>Solar Project Management</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="/admin/dashboard">Dashboard</a>
+          <a href="/admin/clients">Clients</a>
+          <a href="/admin/quotations">Quotations</a>
+          <a href="/admin/projects">Projects</a>
+          <a href="/admin/receipts">Receipts</a>
+        </nav>
+        <div class="sidebar-footer"><button data-logout>Sign Out</button></div>
+      </aside>
+
+      <main class="admin-main">
+        <div class="admin-topbar">
+          <div>
+            <button class="mobile-menu-btn">Menu</button>
+            <h1>New Receipt</h1>
+          </div>
+          <div class="topbar-actions">
+            <a href="/admin/receipts" class="btn btn-secondary"
+              >Back to Receipts</a
+            >
+          </div>
+        </div>
+
+        <form id="receiptForm" class="admin-form">
+          <div class="form-group">
+            <label for="project_id">Project *</label>
+            <select id="project_id" name="project_id" required>
+              <option value="">Select a project...</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="amount">Amount (USD) *</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                min="0.01"
+                step="0.01"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="payment_method">Payment Method *</label>
+              <select id="payment_method" name="payment_method" required>
+                <option value="cash">Cash</option>
+                <option value="bank_transfer">Bank Transfer</option>
+                <option value="mobile_money">Mobile Money</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="payment_reference">Payment Reference</label>
+              <input
+                type="text"
+                id="payment_reference"
+                name="payment_reference"
+              />
+            </div>
+            <div class="form-group">
+              <label for="paid_at">Payment Date *</label>
+              <input type="date" id="paid_at" name="paid_at" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="2"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Receipt</button>
+            <a href="/admin/receipts" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="/admin/js/admin-common.js"></script>
+    <script src="/admin/js/receipts.js"></script>
+  </body>
+</html>

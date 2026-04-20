@@ -5,8 +5,8 @@
  * structured object ready for database insertion.
  */
 
-const { parseString } = require('xml2js');
-const { classifyDocument, extractFileFormat } = require('./classifier');
+const { parseString } = require("xml2js");
+const { classifyDocument, extractFileFormat } = require("./classifier");
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -15,18 +15,18 @@ const { classifyDocument, extractFileFormat } = require('./classifier');
 /** Safely extract text from an xml2js parsed element. */
 function text(node) {
   if (node == null) return null;
-  if (typeof node === 'string') return node.trim() || null;
+  if (typeof node === "string") return node.trim() || null;
   if (Array.isArray(node)) return text(node[0]);
-  if (typeof node === 'object' && node._) return node._.trim() || null;
+  if (typeof node === "object" && node._) return node._.trim() || null;
   return null;
 }
 
 /** Generate a URL-safe slug from a product name. */
 function slugify(str) {
-  return (str || '')
+  return (str || "")
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
     .slice(0, 200);
 }
 
@@ -110,7 +110,7 @@ function parseVictronFeed(xml) {
 
       for (const item of items) {
         try {
-          const name = text(item.name) || 'Unknown Product';
+          const name = text(item.name) || "Unknown Product";
           const externalId = text(item.id);
           if (!externalId) continue; // Skip items with no ID
 
@@ -137,7 +137,9 @@ function parseVictronFeed(xml) {
               title: doc.name,
               url: doc.url,
               file_format: extractFileFormat(doc.url),
-              metadata_json: doc.notes ? JSON.stringify({ notes: doc.notes }) : null,
+              metadata_json: doc.notes
+                ? JSON.stringify({ notes: doc.notes })
+                : null,
             });
           }
 
@@ -147,8 +149,8 @@ function parseVictronFeed(xml) {
             name,
             short_name: text(item.short_name),
             model: text(item.short_name) || name,
-            sku: skus.join(', ') || null,
-            category: text(item.category) || 'Uncategorized',
+            sku: skus.join(", ") || null,
+            category: text(item.category) || "Uncategorized",
             short_description: truncate(text(item.description), 300),
             full_description: text(item.description),
             product_url: `https://www.victronenergy.com/products/${slugify(name)}`,
@@ -170,7 +172,7 @@ function parseVictronFeed(xml) {
 
 function truncate(str, len) {
   if (!str || str.length <= len) return str;
-  return str.slice(0, len - 3) + '...';
+  return str.slice(0, len - 3) + "...";
 }
 
 module.exports = { parseVictronFeed, slugify };
