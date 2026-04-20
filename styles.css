@@ -2966,3 +2966,175 @@ button {
     justify-content: center;
   }
 }
+
+/* ============================================================
+   WHATSAPP FLOATING ACTION BUTTON
+   ============================================================ */
+
+.wa-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25d366;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 999;
+  transition:
+    transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.wa-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+}
+
+.wa-fab svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+  display: block;
+}
+
+/* ============================================================
+   LEGAL PAGES (privacy.html, terms.html)
+   ============================================================ */
+
+.legal-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 112px 40px 80px;
+}
+
+.legal-page h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.legal-page .legal-page__meta {
+  font-size: 14px;
+  color: var(--paragraph);
+  margin-bottom: 40px;
+}
+
+.legal-page h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.legal-page h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.legal-page p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--paragraph);
+  margin-bottom: 16px;
+}
+
+.legal-page ul,
+.legal-page ol {
+  list-style: disc;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.legal-page li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--paragraph);
+  margin-bottom: 6px;
+}
+
+.legal-page a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-page a:hover {
+  color: var(--paragraph);
+}
+
+@media (max-width: 768px) {
+  .legal-page {
+    padding: 96px 24px 60px;
+  }
+}
+
+/* ============================================================
+   CONTACT FORM — UPGRADED STATES
+   ============================================================ */
+
+.form-field-error {
+  font-size: 13px;
+  color: #c0392b;
+  margin-top: 4px;
+  display: block;
+}
+
+.form-input.is-error,
+.form-select.is-error,
+.form-textarea.is-error {
+  border-color: #c0392b;
+  outline-color: #c0392b;
+}
+
+.contact-form__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-form__success {
+  display: none;
+  padding: 32px;
+  background: #f0faf4;
+  border: 1px solid #25d366;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.contact-form__success.is-visible {
+  display: block;
+}
+
+.contact-form__success-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f232a;
+  margin-bottom: 8px;
+}
+
+.contact-form__success-text {
+  font-size: 15px;
+  color: #79898f;
+  line-height: 1.7;
+}
+
+.btn--loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}

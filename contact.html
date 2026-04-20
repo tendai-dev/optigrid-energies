@@ -173,7 +173,7 @@
       <div class="container">
         <div class="contact-section__grid">
           <!-- Left: Contact Form -->
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" novalidate>
             <h2
               style="
                 font-size: 28px;
@@ -192,87 +192,134 @@
               "
             >
               Fill out the form and our team will get back to you within 24
-              hours.
+              business hours.
             </p>
 
-            <div
-              style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
-            >
-              <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input
-                  type="text"
-                  id="firstName"
-                  class="form-input"
-                  placeholder="John"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input
-                  type="text"
-                  id="lastName"
-                  class="form-input"
-                  placeholder="Doe"
-                  required
-                />
-              </div>
+            <!-- Honeypot: hidden from real users, filled only by bots -->
+            <div class="contact-form__honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
             </div>
 
             <div class="form-group">
-              <label for="email">Email Address</label>
+              <label for="name"
+                >Full Name <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="Tendai Moyo"
+                autocomplete="name"
+              />
+              <span class="form-field-error" id="nameError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email"
+                >Email Address <span aria-hidden="true">*</span></label
+              >
               <input
                 type="email"
                 id="email"
+                name="email"
                 class="form-input"
-                placeholder="john@example.com"
-                required
+                placeholder="tendai@example.com"
+                autocomplete="email"
               />
+              <span
+                class="form-field-error"
+                id="emailError"
+                role="alert"
+              ></span>
             </div>
 
             <div class="form-group">
-              <label for="phone">Phone Number</label>
+              <label for="phone">
+                Phone Number
+                <span
+                  style="
+                    font-weight: 400;
+                    color: var(--paragraph);
+                    font-size: 13px;
+                  "
+                  >(strongly recommended — speeds up your quote)</span
+                >
+              </label>
               <input
                 type="tel"
                 id="phone"
+                name="phone"
                 class="form-input"
                 placeholder="+263 78 000 0000"
-                required
+                autocomplete="tel"
               />
             </div>
 
             <div class="form-group">
-              <label for="service">Service Type</label>
-              <select id="service" class="form-select" required>
+              <label for="service"
+                >Service of Interest <span aria-hidden="true">*</span></label
+              >
+              <select id="service" name="service" class="form-select">
                 <option value="" disabled selected>Select a service</option>
-                <option value="residential">Residential Solar</option>
-                <option value="commercial">Commercial Solar</option>
-                <option value="industrial">Industrial Solar</option>
-                <option value="agricultural">Agricultural Solar</option>
-                <option value="payg">Pay-As-You-Go</option>
-                <option value="maintenance">Maintenance & Support</option>
-                <option value="other">Other</option>
+                <option value="Residential">Residential Solar</option>
+                <option value="Commercial">Commercial Solar</option>
+                <option value="Solar EPC">
+                  Solar EPC (Engineering, Procurement &amp; Construction)
+                </option>
+                <option value="PAYG">Pay-As-You-Go (PAYG)</option>
+                <option value="Other">Other</option>
               </select>
+              <span
+                class="form-field-error"
+                id="serviceError"
+                role="alert"
+              ></span>
             </div>
 
             <div class="form-group">
-              <label for="message">Message</label>
+              <label for="location">Property Location (City / Town)</label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                class="form-input"
+                placeholder="e.g. Harare, Bulawayo, Mutare"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message"
+                >Message <span aria-hidden="true">*</span></label
+              >
               <textarea
                 id="message"
+                name="message"
                 class="form-textarea"
-                placeholder="Tell us about your energy needs..."
+                placeholder="Tell us about your energy needs, property size, or any questions you have..."
                 rows="5"
-                required
               ></textarea>
+              <span
+                class="form-field-error"
+                id="messageError"
+                role="alert"
+              ></span>
             </div>
 
             <button
               type="submit"
+              id="contactSubmit"
               class="btn btn--primary"
               style="width: 100%; justify-content: center"
             >
-              Send Message
+              <span id="submitLabel">Send Message</span>
               <svg
                 width="18"
                 height="18"
@@ -287,6 +334,22 @@
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </button>
+
+            <!-- Success state shown after successful submission -->
+            <div
+              class="contact-form__success"
+              id="contactSuccess"
+              role="status"
+              aria-live="polite"
+            >
+              <p class="contact-form__success-title">Message sent!</p>
+              <p class="contact-form__success-text">
+                Thank you for reaching out. We'll reply within 24 business
+                hours.<br />
+                In the meantime, feel free to call us on
+                <a href="tel:+263782345678">+263 78 234 5678</a>.
+              </p>
+            </div>
           </form>
 
           <!-- Right: Contact Info Cards -->
@@ -723,6 +786,8 @@
                 <li><a href="products.html">Solar Panels</a></li>
                 <li><a href="products.html">Inverters</a></li>
                 <li><a href="products.html">Batteries</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
               </ul>
             </div>
             <div class="footer__column">
@@ -832,6 +897,25 @@
       </div>
     </footer>
 
+    <!-- WhatsApp Floating Action Button -->
+    <a
+      href="https://wa.me/263782345678?text=Hi%20OptiGrid%2C%20I%27d%20like%20to%20learn%20more%20about%20solar%20options."
+      class="wa-fab"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M16 0C7.163 0 0 7.163 0 16c0 2.827.736 5.476 2.027 7.774L0 32l8.456-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.77-1.853l-.485-.289-5.019 1.191 1.26-4.888-.317-.502A13.236 13.236 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.878c-.398-.199-2.356-1.163-2.72-1.295-.365-.133-.63-.199-.895.199-.265.398-1.029 1.295-1.261 1.56-.232.265-.465.299-.863.1-.398-.2-1.682-.62-3.203-1.977-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.812.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.497-.033-.696-.1-.199-.895-2.158-1.227-2.954-.323-.775-.651-.67-.895-.682l-.762-.013c-.265 0-.696.1-1.06.497-.365.398-1.393 1.362-1.393 3.32 0 1.959 1.427 3.85 1.626 4.116.199.265 2.809 4.288 6.806 6.017.951.41 1.693.655 2.271.839.954.303 1.823.26 2.51.158.765-.114 2.356-.963 2.688-1.894.332-.93.332-1.727.232-1.894-.1-.166-.365-.265-.763-.464z"
+        />
+      </svg>
+    </a>
+
     <!-- Motion layer: Lenis smooth scroll, GSAP + ScrollTrigger, SplitType -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -841,5 +925,149 @@
 
     <!-- Main JavaScript -->
     <script src="main.js"></script>
+
+    <!-- Contact form: client-side validation + API submission -->
+    <script>
+      (function () {
+        var form = document.getElementById("contactForm");
+        var submitBtn = document.getElementById("contactSubmit");
+        var submitLabel = document.getElementById("submitLabel");
+        var successBox = document.getElementById("contactSuccess");
+
+        function getField(id) {
+          return document.getElementById(id);
+        }
+
+        function setError(fieldId, errorId, msg) {
+          var field = getField(fieldId);
+          var errorEl = getField(errorId);
+          if (!field || !errorEl) return;
+          errorEl.textContent = msg;
+          if (msg) {
+            field.classList.add("is-error");
+          } else {
+            field.classList.remove("is-error");
+          }
+        }
+
+        function clearErrors() {
+          ["name", "email", "service", "message"].forEach(function (f) {
+            setError(f, f + "Error", "");
+          });
+        }
+
+        function validate() {
+          var ok = true;
+          var name = getField("name").value.trim();
+          var email = getField("email").value.trim();
+          var service = getField("service").value;
+          var message = getField("message").value.trim();
+
+          if (name.length < 2) {
+            setError(
+              "name",
+              "nameError",
+              "Please enter your full name (at least 2 characters).",
+            );
+            ok = false;
+          }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setError(
+              "email",
+              "emailError",
+              "Please enter a valid email address.",
+            );
+            ok = false;
+          }
+          if (!service) {
+            setError(
+              "service",
+              "serviceError",
+              "Please select a service of interest.",
+            );
+            ok = false;
+          }
+          if (message.length < 10) {
+            setError(
+              "message",
+              "messageError",
+              "Please enter a message (at least 10 characters).",
+            );
+            ok = false;
+          }
+          return ok;
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          clearErrors();
+
+          if (!validate()) return;
+
+          // Show loading state
+          submitBtn.classList.add("btn--loading");
+          submitLabel.textContent = "Sending…";
+
+          var payload = {
+            name: getField("name").value.trim(),
+            email: getField("email").value.trim(),
+            phone: getField("phone").value.trim(),
+            service: getField("service").value,
+            location: getField("location").value.trim(),
+            message: getField("message").value.trim(),
+            website: getField("website").value, // honeypot
+          };
+
+          fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          })
+            .then(function (res) {
+              return res.json().then(function (data) {
+                return { status: res.status, data: data };
+              });
+            })
+            .then(function (result) {
+              submitBtn.classList.remove("btn--loading");
+              submitLabel.textContent = "Send Message";
+
+              if (result.status === 200 && result.data.success) {
+                form.reset();
+                successBox.classList.add("is-visible");
+                successBox.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                });
+              } else if (result.data.errors) {
+                // Server returned field-level errors
+                var errs = result.data.errors;
+                if (errs.name) setError("name", "nameError", errs.name);
+                if (errs.email) setError("email", "emailError", errs.email);
+                if (errs.service)
+                  setError("service", "serviceError", errs.service);
+                if (errs.message)
+                  setError("message", "messageError", errs.message);
+              } else {
+                setError(
+                  "message",
+                  "messageError",
+                  result.data.error ||
+                    "Something went wrong. Please try again.",
+                );
+              }
+            })
+            .catch(function () {
+              submitBtn.classList.remove("btn--loading");
+              submitLabel.textContent = "Send Message";
+              setError(
+                "message",
+                "messageError",
+                "Network error — please check your connection and try again.",
+              );
+            });
+        });
+      })();
+    </script>
   </body>
 </html>

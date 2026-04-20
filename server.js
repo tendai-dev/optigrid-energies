@@ -8,6 +8,7 @@ const { runMigrations } = require("./server/db/migrate");
 const victronRoutes = require("./server/victron/routes");
 const adminRoutes = require("./server/admin/routes");
 const { createStore } = require("./server/admin/auth");
+const contactRoutes = require("./server/routes/contact");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -66,6 +67,7 @@ app.use(
 // ---------------------------------------------------------------------------
 app.use("/api/victron", victronRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/contact", contactRoutes);
 
 // ---------------------------------------------------------------------------
 // Start (local dev only — on Vercel the export is used)
