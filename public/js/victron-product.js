@@ -117,7 +117,7 @@
     document.getElementById("vpModel").textContent = product.model
       ? `Model: ${product.model}`
       : "";
-    document.getElementById("vpDescription").textContent =
+    document.getElementById("vpDescription").innerHTML =
       product.full_description || product.short_description || "";
     document.getElementById("vpOfficialLink").href = product.product_url || "#";
 
