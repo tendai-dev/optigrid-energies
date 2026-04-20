@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block admin CRM — not public content
+Disallow: /admin/
+
+Sitemap: https://optigridenergy.co.zw/sitemap.xml

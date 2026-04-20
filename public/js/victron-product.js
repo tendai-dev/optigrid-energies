@@ -96,10 +96,51 @@
     }
   }
 
+  // -- Inject Product structured data after data loads ---------------------
+  // Done here rather than in <head> because product data is fetched client-side.
+  function injectProductSchema(product) {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": product.name,
+      "description": product.short_description || product.full_description || "",
+      "brand": {
+        "@type": "Brand",
+        "name": "Victron Energy"
+      },
+      "url": `https://optigridenergy.co.zw/victron-product?slug=${encodeURIComponent(product.slug || "")}`,
+      "offers": {
+        "@type": "Offer",
+        "seller": {
+          "@type": "Organization",
+          "name": "OptiGrid Energy",
+          "url": "https://optigridenergy.co.zw"
+        },
+        "areaServed": { "@type": "Country", "name": "Zimbabwe" }
+      }
+    };
+
+    if (product.image_url) {
+      schema.image = product.image_url;
+    }
+
+    if (product.model) {
+      schema.model = product.model;
+    }
+
+    const scriptEl = document.createElement("script");
+    scriptEl.type = "application/ld+json";
+    scriptEl.textContent = JSON.stringify(schema);
+    document.head.appendChild(scriptEl);
+  }
+
   // -- Render product -------------------------------------------------------
   function render(product) {
     // Page title
     document.title = `${product.name} — Victron | OptiGrid Energy`;
+
+    // Inject Product structured data for SEO
+    injectProductSchema(product);
 
     // Breadcrumb
     document.getElementById("vpBreadcrumbName").textContent = product.name;

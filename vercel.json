@@ -24,10 +24,20 @@
     {
       "src": "*.js",
       "use": "@vercel/static"
+    },
+    {
+      "src": "sitemap.xml",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "robots.txt",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/server.js" },
+    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/admin/js/(.*)", "dest": "/public/admin/js/$1" },
     { "src": "/admin/(.*\\.html)", "dest": "/admin/$1" },
     { "src": "/admin/login", "dest": "/admin/login.html" },
