@@ -108,13 +108,13 @@
         "@type": "Brand",
         "name": "Victron Energy"
       },
-      "url": `https://optigridenergy.co.zw/victron-product?slug=${encodeURIComponent(product.slug || "")}`,
+      "url": `https://optigrid.co.zw/victron-product?slug=${encodeURIComponent(product.slug || "")}`,
       "offers": {
         "@type": "Offer",
         "seller": {
           "@type": "Organization",
           "name": "OptiGrid Energy",
-          "url": "https://optigridenergy.co.zw"
+          "url": "https://optigrid.co.zw"
         },
         "areaServed": { "@type": "Country", "name": "Zimbabwe" }
       }

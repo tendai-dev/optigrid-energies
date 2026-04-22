@@ -4,4 +4,4 @@ Allow: /
 # Block admin CRM — not public content
 Disallow: /admin/
 
-Sitemap: https://optigridenergy.co.zw/sitemap.xml
+Sitemap: https://optigrid.co.zw/sitemap.xml

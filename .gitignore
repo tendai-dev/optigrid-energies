@@ -1,3 +1,4 @@
+data/*
 .vercel
 node_modules
 data/*.db

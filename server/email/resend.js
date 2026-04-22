@@ -19,7 +19,7 @@ async function sendEmail({ to, subject, html, replyTo }) {
   }
 
   const payload = {
-    from: "OptiGrid Energy <noreply@optigridenergy.co.zw>",
+    from: "OptiGrid Energy <noreply@optigrid.co.zw>",
     to: [to],
     subject,
     html,

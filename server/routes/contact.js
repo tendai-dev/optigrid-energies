@@ -75,7 +75,7 @@ function buildInternalEmail({
   <h3 style="margin-top: 24px; margin-bottom: 8px;">Message</h3>
   <p style="background: #f5f5f3; padding: 16px; border-radius: 8px; line-height: 1.7; white-space: pre-wrap;">${escapeHtml(message)}</p>
   <hr style="margin: 24px 0; border: none; border-top: 1px solid #e8e8e8;" />
-  <p style="font-size: 12px; color: #79898f;">Submitted via optigridenergy.co.zw contact form</p>
+  <p style="font-size: 12px; color: #79898f;">Submitted via optigrid.co.zw contact form</p>
 </body>
 </html>
 `.trim();
@@ -100,15 +100,15 @@ function buildAutoReplyEmail({ name }) {
   </p>
   <p style="line-height: 1.7; margin-top: 16px;">
     In the meantime, feel free to explore our
-    <a href="https://optigridenergy.co.zw/services.html" style="color: #0f232a;">services</a>
+    <a href="https://optigrid.co.zw/services.html" style="color: #0f232a;">services</a>
     or browse our
-    <a href="https://optigridenergy.co.zw/victron-catalog.html" style="color: #0f232a;">Victron product catalogue</a>.
+    <a href="https://optigrid.co.zw/victron-catalog.html" style="color: #0f232a;">Victron product catalogue</a>.
   </p>
   <hr style="margin: 32px 0; border: none; border-top: 1px solid #e8e8e8;" />
   <p style="font-size: 13px; color: #79898f;">
     OptiGrid Energy &mdash; 14 Samora Machel Ave, Harare, Zimbabwe<br />
     <a href="tel:+263782345678" style="color: #79898f;">+263 78 234 5678</a> &nbsp;|&nbsp;
-    <a href="mailto:info@optigridenergy.co.zw" style="color: #79898f;">info@optigridenergy.co.zw</a>
+    <a href="mailto:info@optigrid.co.zw" style="color: #79898f;">info@optigrid.co.zw</a>
   </p>
 </body>
 </html>
@@ -214,7 +214,7 @@ router.post("/", async (req, res) => {
 
   try {
     await sendEmail({
-      to: "info@optigridenergy.co.zw",
+      to: "info@optigrid.co.zw",
       subject: `New Solar Enquiry from ${sanitised.name} — ${sanitised.service}`,
       html: buildInternalEmail(sanitised),
       replyTo: sanitised.email,
